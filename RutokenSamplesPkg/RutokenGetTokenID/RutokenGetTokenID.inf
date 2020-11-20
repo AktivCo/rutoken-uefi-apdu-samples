@@ -1,0 +1,36 @@
+## @file
+#  **************************************************************************
+#  * Rutoken                                                                *
+#  * Copyright (c) 2020-2021, Aktiv-Soft JSC. All rights reserved.          *
+#  * Подробная информация:  http://www.rutoken.ru                           *
+#  *------------------------------------------------------------------------*
+#  * Пример работы с Рутокен В UEFI на языке C                              *
+#  **************************************************************************
+##
+
+[Defines]
+  INF_VERSION                    = 0x00010006
+  BASE_NAME                      = RutokenGetTokenID
+  FILE_GUID                      = 4e868b9b-2a0a-4032-b7aa-6ed89af448df
+  MODULE_TYPE                    = UEFI_APPLICATION
+  VERSION_STRING                 = 0.1
+  ENTRY_POINT                    = ShellCEntryLib 
+
+[Sources]
+  sample.c
+  common.h
+  log.h
+
+[Packages]
+  MdePkg/MdePkg.dec
+  MdeModulePkg/MdeModulePkg.dec
+
+[Protocols]
+  gEfiSmartCardReaderProtocolGuid
+
+[LibraryClasses]
+  UefiLib
+  ShellCEntryLib
+  BaseMemoryLib
+  UefiBootServicesTableLib
+  IntrinsicLib
