@@ -31,6 +31,7 @@
  *  - log.h - для доступа к инструментам логирования                     *
  ************************************************************************/
 #include <Library/BaseMemoryLib.h>
+#include <Library/UefiApplicationEntryPoint.h>
 #include <Library/UefiBootServicesTableLib.h>
 #include <Library/UefiLib.h>
 #include <Uefi.h>
@@ -284,7 +285,7 @@ Exit:
     return Status;
 }
 
-INTN EFIAPI ShellAppMain(IN UINTN Argc, IN CHAR16** Argv) {
+EFI_STATUS EFIAPI UefiMain(IN EFI_HANDLE ImageHandle, IN EFI_SYSTEM_TABLE* SystemTable) {
     EFI_STATUS Status; // код статуса выполнения
     UINTN HandleCount; // количество найденных хендлов устройств смарт карт
     EFI_HANDLE* DevicePathHandleBuffer = NULL; // массив хендлов смарт карт
