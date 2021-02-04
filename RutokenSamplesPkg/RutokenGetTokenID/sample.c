@@ -29,6 +29,7 @@
  *    Smart Card Reader Protocol                                         *
  *  - common.h - для доступа к вспомогательным данным примера            *
  *  - log.h - для доступа к инструментам логирования                     *
+ *  - utils.h - для доступа к вспомогательным функциям                   *
  ************************************************************************/
 #include <Library/BaseMemoryLib.h>
 #include <Library/UefiApplicationEntryPoint.h>
@@ -40,6 +41,7 @@
 
 #include "common.h"
 #include "log.h"
+#include "utils.h"
 
 /**************************************************************************
  * Функция инициации подключения с картой                                 *
@@ -403,6 +405,8 @@ Exit:
     } else {
         Print(L"\n\nSample finished successfully.\n");
     }
+
+    Pause(L"Press any key to continue");
 
     return Error;
 }

@@ -18,8 +18,10 @@
 
 [Sources]
   sample.c
+  utils.c
   common.h
   log.h
+  utils.h
 
 [Packages]
   MdePkg/MdePkg.dec
